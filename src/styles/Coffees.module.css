@@ -1,0 +1,37 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: center;
+  width: 20%;
+  height: 50px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  vertical-align: middle;
+}
+
+.table th {
+  background-color: rgb(204, 150, 204);
+  font-weight: bold;
+}
+select {
+  width: 200px;
+}
+
+.table tr:hover {
+  background-color: #d2f4bf;
+}
+
+.title {
+  color: purple;
+}

@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
+import "./App.css";
+import CreateIngredientPage from "./pages/CreateIngredientPage";
+import IngredientListPage from "./pages/IngredientListPage";
+import EditIngredientPage from "./pages/EditIngredientPage";
+import CoffeeListPage from "./pages/CoffeeListPage";
+import CreateCoffeePage from "./pages/CreateCoffeePage";
+import UpdateCoffeePage from "./pages/UpdateCoffeePage";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <BrowserRouter>
+      <nav className="navigation">
+        <Link to="/coffees">Coffees</Link>
+        <Link to="/ingredients">Ingredients</Link>
+      </nav>
 
-export default App
+      <Routes>
+        <Route path="/" element={<Navigate to="/" />} />
+        <Route path="/ingredients/create" element={<CreateIngredientPage />} />
+        <Route path="/ingredients" element={<IngredientListPage />} />
+        <Route
+          path="/ingredients/edit/:ingredientId"
+          element={<EditIngredientPage />}
+        />
+        <Route path="/coffees" element={<CoffeeListPage />} />
+        <Route path="/coffees/create" element={<CreateCoffeePage />} />
+        <Route
+          path="/coffees/update/:coffeeId"
+          element={<UpdateCoffeePage />}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
