@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  gap: 10px;
+  max-width: 400px;
+  margin: 1rem 0;
+  margin-top: 50px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+input,
+select {
+  padding: 6px 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+button {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  background-color: purple;
+  color: white;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: purple;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+.title {
+  color: purple;
+}
